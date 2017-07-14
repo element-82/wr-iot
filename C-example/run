@@ -1,0 +1,5 @@
+#!/bin/sh
+thing_key="pb_private"
+app_token="3EEcC0KeNF0aYnGQ"
+
+./app_demo $thing_key $app_token
