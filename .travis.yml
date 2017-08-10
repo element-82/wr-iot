@@ -14,3 +14,5 @@ script:
   - cmake --build build -- -j2
   - ./hello
 
+notifications:
+    slack: windriver-helix:iM7LMgTg6odItxGH1rZVXyzn
