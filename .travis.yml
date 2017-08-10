@@ -4,7 +4,7 @@ compiler:
   - gcc
 
 before_script:
-  - git diff --cached --name-only --diff-filter=ACMRT | grep "\.[cmh]$" | xargs -n1 clang-format -style=file -output-replacements-xml | grep "<replacement " | cat >/dev/null
+  - git diff --cached --name-only --diff-filter=ACMRT ${TRAVIS_COMMIT}~1 | egrep "\.[hc](pp|xx)?$" | xargs -n1 clang-format -style=file -output-replacements-xml > /dev/null
   - if [ $? -ne 1 ]; then echo "please format your code"; exit 1; else exit 0; fi
 
 script:
